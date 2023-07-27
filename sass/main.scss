@@ -14,3 +14,78 @@ $color-share-btn-active: #ffffff;
 $color-share-btn-active-bg: #6e8098;
 
 // ********** FONT FAMILY **********
+$font-primary: "Manrope", sans-serif;
+
+// ********* FONT WEIGHTS *********
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// ************** BASE *************
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+// ********* MOBILE LAYOUT *********
+body {
+  box-sizing: border-box;
+  font-family: $font-primary;
+  padding: 7.4rem 2.4rem 8.1rem;
+  background: $color-body-bg;
+}
+
+// *********** COMPONENT ***********
+.component {
+  max-width: 32.7rem;
+  max-height: 51.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4rem 4rem -1rem rgba(201, 213, 225, 0.5);
+  overflow: hidden;
+
+  &__image-container {
+    max-width: 32.7rem;
+    max-height: 20rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    transform: translateY(-1.5rem);
+  }
+}
+
+.text-container {
+  background: $color-text-container-bg;
+  padding: 3.6rem 3.2rem 2rem;
+
+  &__header {
+    color: $color-header-text;
+    font-size: 1.6rem;
+    font-weight: $font-weight-bold;
+    line-height: 2.4rem;
+    letter-spacing: 0.02rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__paragraph {
+    color: $color-paragraph-text;
+    font-size: 1.3rem;
+    font-weight: $font-weight-medium;
+    line-height: 2rem;
+    letter-spacing: 0.0122rem;
+    margin-bottom: 3.2rem;
+  }
+}
