@@ -104,6 +104,7 @@ body {
 // ******* AUTHOR CONTAINER ********
 .author-container {
   display: flex;
+  align-items: center;
 
   &__img {
     width: 4rem;
@@ -192,7 +193,78 @@ body {
 // ******* 376px MEDIA QUERY *******
 @media (min-width: 23.5em) {
   body {
-    padding: 7.4rem 0 8.1rem;
+    height: 100vh;
+    padding: 0;
+    align-items: center;
+  }
+}
+
+// ******** DESKTOP LAYOUT ********
+
+// ***** DESKTOP HOVER STATES *****
+@media (min-width: 62em) {
+  .author-container__share-btn:hover,
+  .share-container__hide-btn:hover {
+    cursor: pointer;
+  }
+}
+
+// ****** 1440px MEDIA QUERY ******
+@media (min-width: 90em) {
+  // ********** COMPONENT **********
+  .component {
+    max-width: initial;
+    min-height: initial;
+    width: 73rem;
+    height: 28rem;
+    display: flex;
+
+    &__image-container {
+      max-width: initial;
+      max-height: initial;
+      width: 28.5rem;
+      height: 28rem;
+      border-radius: 1rem 0 0 1rem;
+    }
+
+    &__img {
+      width: 123%;
+      transform: initial;
+    }
+  }
+
+  // ******* TEXT CONTAINER ********
+  .text-container {
+    width: 44.5rem;
+    padding: 3.2rem 4rem;
+    border-radius: 0 1rem 1rem 0;
+
+    &__header {
+      font-size: 2rem;
+      line-height: 2.8rem;
+      letter-spacing: 0.025rem;
+    }
+
+    &__paragraph {
+      max-width: initial;
+      max-height: initial;
+      margin-bottom: 2rem;
+    }
+  }
+
+  // ****** AUTHOR CONTAINER ******
+  .author-container {
+    &__img {
+      margin-right: 1.6rem;
+    }
+
+    &__name-date {
+      margin-right: 1.6rem;
+    }
+  }
+
+  // ******* SHARE CONTAINER *******
+  .share-container {
   }
 }
 
