@@ -265,6 +265,57 @@ body {
 
   // ******* SHARE CONTAINER *******
   .share-container {
+    display: none;
+  }
+
+  .share-container-desktop {
+    width: 26.8rem;
+    height: 5.5rem;
+    position: absolute;
+    top: 12.9rem;
+    left: 25.51rem;
+
+    &__text-socials {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__text {
+      color: $color-share-text;
+      font-size: 1.3rem;
+      font-weight: $font-weight-medium;
+      line-height: 2rem;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      margin-right: 2.1rem;
+    }
+
+    &__socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 9.2rem;
+    }
+
+    &__hide-btn {
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 50%;
+      border: none;
+      background: $color-hide-btn-bg;
+      position: absolute;
+      top: 21.2rem;
+      left: 37.3rem;
+      z-index: 10;
+    }
+
+    &__hide-img path {
+      fill: $color-hide-btn;
+    }
   }
 }
 
