@@ -204,7 +204,9 @@ body {
 // ***** DESKTOP HOVER STATES *****
 @media (min-width: 62em) {
   .author-container__share-btn:hover,
-  .share-container__hide-btn:hover {
+  .author-container-desktop__share-btn:hover,
+  .share-container__hide-btn:hover,
+  .share-container-desktop__hide-btn:hover {
     cursor: pointer;
   }
 }
@@ -263,6 +265,18 @@ body {
     }
   }
 
+  .author-container-desktop__share-btn {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    border: none;
+    background: $color-share-btn-bg;
+    z-index: 10;
+    position: absolute;
+    top: 21.2rem;
+    left: 37.3rem;
+  }
+
   // ******* SHARE CONTAINER *******
   .share-container {
     display: none;
@@ -310,7 +324,6 @@ body {
       position: absolute;
       top: 21.2rem;
       left: 37.3rem;
-      z-index: 10;
     }
 
     &__hide-img path {
