@@ -1,7 +1,6 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-const viewportWidth = window.innerWidth;
 const shareBtnContainer = document.querySelector(
   ".author-container__share-btn"
 );
@@ -23,6 +22,7 @@ shareBtnContainer.addEventListener("click", function (e) {
   const shareBtn = e.target.closest(".author-container__share-btn");
   if (!shareBtn) return;
   authorContainer.classList.toggle("hidden");
+  authorContainer.classList.add("reveal");
   shareContainer.classList.toggle("hidden");
 });
 

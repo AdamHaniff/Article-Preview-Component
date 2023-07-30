@@ -145,6 +145,10 @@ body {
   }
 }
 
+.author-container-desktop__share-btn {
+  display: none;
+}
+
 // ******** SHARE CONTAINER ********
 .share-container {
   display: flex;
@@ -188,6 +192,11 @@ body {
   &__hide-img path {
     fill: $color-hide-btn;
   }
+}
+
+.share-container-desktop,
+.share-container-desktop__hide-btn {
+  display: none;
 }
 
 // ******* 376px MEDIA QUERY *******
@@ -266,6 +275,7 @@ body {
   }
 
   .author-container-desktop__share-btn {
+    display: inline-block;
     width: 3.2rem;
     height: 3.2rem;
     border-radius: 50%;
@@ -283,6 +293,7 @@ body {
   }
 
   .share-container-desktop {
+    display: block;
     width: 26.8rem;
     height: 5.5rem;
     position: absolute;
@@ -316,6 +327,7 @@ body {
     }
 
     &__hide-btn {
+      display: inline-block;
       width: 3.2rem;
       height: 3.2rem;
       border-radius: 50%;
@@ -330,9 +342,14 @@ body {
       fill: $color-hide-btn;
     }
   }
+
+  // CLASS USED WITH JAVASCRIPT
+  .reveal {
+    display: flex !important;
+  }
 }
 
-// CLASSES USED WITH JAVASCRIPT
+// CLASS USED WITH JAVASCRIPT
 .hidden {
   display: none;
 }
