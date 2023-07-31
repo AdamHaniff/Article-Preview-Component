@@ -1,52 +1,67 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
+// VARIABLES
+const authorContainer = document.querySelector(".author-container");
+const shareContainer = document.querySelector(".share-container");
+const shareContainerDesktop = document.querySelector(
+  ".share-container-desktop"
+);
 const shareBtnContainer = document.querySelector(
   ".author-container__share-btn"
 );
 const shareBtnContainerDesktop = document.querySelector(
   ".author-container-desktop__share-btn"
 );
-const authorContainer = document.querySelector(".author-container");
-const shareContainer = document.querySelector(".share-container");
 const hideBtnContainer = document.querySelector(".share-container__hide-btn");
-const shareContainerDesktop = document.querySelector(
-  ".share-container-desktop"
-);
 const hideBtnContainerDesktop = document.querySelector(
   ".share-container-desktop__hide-btn"
 );
-let shareBtn;
+let shareBtnDesktop = null;
 
-shareBtnContainer.addEventListener("click", function (e) {
+// HELPER FUNCTION
+function toggleHiddenClassOn(...elements) {
+  elements.forEach((el) => {
+    el.classList.toggle("hidden");
+  });
+}
+
+// EVENT LISTENER CALLBACK FUNCTIONS
+function handleShareBtnClick(e) {
   const shareBtn = e.target.closest(".author-container__share-btn");
   if (!shareBtn) return;
-  authorContainer.classList.toggle("hidden");
+  toggleHiddenClassOn(authorContainer, shareContainer);
   authorContainer.classList.add("reveal");
-  shareContainer.classList.toggle("hidden");
-});
+}
 
-hideBtnContainer.addEventListener("click", function (e) {
+function handleHideBtnClick(e) {
   const hideBtn = e.target.closest(".share-container__hide-btn");
   if (!hideBtn) return;
-  authorContainer.classList.toggle("hidden");
-  shareContainer.classList.toggle("hidden");
-});
+  toggleHiddenClassOn(authorContainer, shareContainer);
+}
 
-// DESKTOP
+function handleShareBtnClickDesktop(e) {
+  shareBtnDesktop = e.target.closest(".author-container-desktop__share-btn");
+  if (!shareBtnDesktop) return;
+  toggleHiddenClassOn(
+    shareBtnDesktop,
+    shareContainerDesktop,
+    hideBtnContainerDesktop
+  );
+}
 
-shareBtnContainerDesktop.addEventListener("click", function (e) {
-  shareBtn = e.target.closest(".author-container-desktop__share-btn");
-  if (!shareBtn) return;
-  shareBtn.classList.toggle("hidden");
-  shareContainerDesktop.classList.toggle("hidden");
-  hideBtnContainerDesktop.classList.toggle("hidden");
-});
+function handleHideBtnClickDesktop(e) {
+  const hideBtnDesktop = e.target.closest(".share-container-desktop__hide-btn");
+  if (!hideBtnDesktop) return;
+  toggleHiddenClassOn(
+    hideBtnContainerDesktop,
+    shareBtnDesktop,
+    shareContainerDesktop
+  );
+}
 
-hideBtnContainerDesktop.addEventListener("click", function (e) {
-  const hideBtn = e.target.closest(".share-container-desktop__hide-btn");
-  if (!hideBtn) return;
-  hideBtnContainerDesktop.classList.toggle("hidden");
-  shareBtn.classList.toggle("hidden");
-  shareContainerDesktop.classList.toggle("hidden");
-});
+// EVENT LISTENERS
+shareBtnContainer.addEventListener("click", handleShareBtnClick);
+shareBtnContainerDesktop.addEventListener("click", handleShareBtnClickDesktop);
+hideBtnContainer.addEventListener("click", handleHideBtnClick);
+hideBtnContainerDesktop.addEventListener("click", handleHideBtnClickDesktop);

@@ -107,7 +107,6 @@ body {
   background: #ecf2f8;
   margin-left: auto;
 }
-
 .author-container-desktop__share-btn {
   display: none;
 }
@@ -148,12 +147,10 @@ body {
   background: #6e8098;
   margin-left: auto;
 }
-.share-container__hide-img path {
+.share-container__hide-btn-img path {
   fill: #ffffff;
 }
-
-.share-container-desktop,
-.share-container-desktop__hide-btn {
+.share-container-desktop, .share-container-desktop__hide-btn {
   display: none;
 }
 
@@ -210,7 +207,7 @@ body {
     margin-right: 1.6rem;
   }
   .author-container__name-date {
-    margin-right: 1.6rem;
+    margin-right: initial;
   }
   .author-container-desktop__share-btn {
     display: inline-block;
@@ -269,7 +266,7 @@ body {
     top: 21.2rem;
     left: 37.3rem;
   }
-  .share-container-desktop__hide-img path {
+  .share-container-desktop__hide-btn-img path {
     fill: #ffffff;
   }
   .reveal {
