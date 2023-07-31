@@ -100,12 +100,12 @@ body {
   letter-spacing: 0.0122rem;
 }
 .author-container__share-btn {
-  margin-left: auto;
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
   border: none;
   background: #ecf2f8;
+  margin-left: auto;
 }
 
 .author-container-desktop__share-btn {
@@ -141,12 +141,12 @@ body {
   margin-right: 8%;
 }
 .share-container__hide-btn {
-  margin-left: auto;
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
   border: none;
   background: #6e8098;
+  margin-left: auto;
 }
 .share-container__hide-img path {
   fill: #ffffff;

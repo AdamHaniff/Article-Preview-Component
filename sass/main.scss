@@ -44,6 +44,32 @@ body {
   background: $color-body-bg;
 }
 
+// ************* MIXINS ************
+@mixin btn-styles($background-color) {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: none;
+  background: $background-color;
+}
+
+@mixin share-text-styles($margin-right) {
+  color: $color-share-text;
+  font-size: 1.3rem;
+  font-weight: $font-weight-medium;
+  line-height: 2rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  margin-right: $margin-right;
+}
+
+@mixin socials-styles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 9.2rem;
+}
+
 // ********* MOBILE LAYOUT *********
 body {
   padding: 7.4rem 6.4vw 8.1rem;
@@ -73,7 +99,6 @@ body {
 }
 
 // ******** TEXT CONTAINER *********
-
 .text-container {
   background: $color-text-container-bg;
   padding: 3.6rem 9.8% 2rem;
@@ -136,12 +161,8 @@ body {
   }
 
   &__share-btn {
+    @include btn-styles($color-share-btn-bg);
     margin-left: auto;
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 50%;
-    border: none;
-    background: $color-share-btn-bg;
   }
 }
 
@@ -163,30 +184,17 @@ body {
   padding: 0 9.8%;
 
   &__text {
-    color: $color-share-text;
-    font-size: 1.3rem;
-    font-weight: $font-weight-medium;
-    line-height: 2rem;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
-    margin-right: 8%;
+    @include share-text-styles(8%);
   }
 
   &__socials {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 9.2rem;
+    @include socials-styles();
     margin-right: 8%;
   }
 
   &__hide-btn {
+    @include btn-styles($color-hide-btn-bg);
     margin-left: auto;
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 50%;
-    border: none;
-    background: $color-hide-btn-bg;
   }
 
   &__hide-img path {
@@ -276,11 +284,7 @@ body {
 
   .author-container-desktop__share-btn {
     display: inline-block;
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 50%;
-    border: none;
-    background: $color-share-btn-bg;
+    @include btn-styles($color-share-btn-bg);
     z-index: 10;
     position: absolute;
     top: 21.2rem;
@@ -310,29 +314,16 @@ body {
     }
 
     &__text {
-      color: $color-share-text;
-      font-size: 1.3rem;
-      font-weight: $font-weight-medium;
-      line-height: 2rem;
-      letter-spacing: 0.5rem;
-      text-transform: uppercase;
-      margin-right: 2.1rem;
+      @include share-text-styles(2.1rem);
     }
 
     &__socials {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 9.2rem;
+      @include socials-styles();
     }
 
     &__hide-btn {
       display: inline-block;
-      width: 3.2rem;
-      height: 3.2rem;
-      border-radius: 50%;
-      border: none;
-      background: $color-hide-btn-bg;
+      @include btn-styles($color-hide-btn-bg);
       position: absolute;
       top: 21.2rem;
       left: 37.3rem;
