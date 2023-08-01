@@ -1,0 +1,124 @@
+// ******** DESKTOP LAYOUTS ********
+
+// ***** DESKTOP HOVER STATES *****
+// ******* 992px MEDIA QUERY *******
+@media (min-width: 62em) {
+  .author-container__share-btn:hover,
+  .author-container-desktop__share-btn:hover,
+  .share-container__hide-btn:hover,
+  .share-container-desktop__hide-btn:hover {
+    cursor: pointer;
+  }
+}
+
+// ****** 1440px MEDIA QUERY ******
+@media (min-width: 90em) {
+  // ********** COMPONENT **********
+  .component {
+    max-width: initial;
+    min-height: initial;
+    width: 73rem;
+    height: 28rem;
+    display: flex;
+
+    &__image-container {
+      max-width: initial;
+      max-height: initial;
+      width: 28.5rem;
+      height: 28rem;
+      border-radius: 1rem 0 0 1rem;
+    }
+
+    &__img {
+      width: 123%;
+      transform: initial;
+    }
+  }
+
+  // ******* TEXT CONTAINER ********
+  .text-container {
+    width: 44.5rem;
+    padding: 3.2rem 4rem;
+    border-radius: 0 1rem 1rem 0;
+
+    &__header {
+      font-size: 2rem;
+      line-height: 2.8rem;
+      letter-spacing: 0.025rem;
+    }
+
+    &__paragraph {
+      max-width: initial;
+      max-height: initial;
+      margin-bottom: 2rem;
+    }
+  }
+
+  // ****** AUTHOR CONTAINER ******
+  .author-container {
+    &__img {
+      margin-right: 1.6rem;
+    }
+
+    &__name-date {
+      margin-right: initial;
+    }
+
+    &-desktop__share-btn {
+      display: inline-block;
+      @include btn-styles($color-share-btn-bg);
+      z-index: 10;
+      position: absolute;
+      top: 21.2rem;
+      left: 37.3rem;
+    }
+  }
+
+  // ******* SHARE CONTAINER *******
+  .share-container {
+    display: none;
+
+    &-desktop {
+      display: block;
+      width: 26.8rem;
+      height: 5.5rem;
+      position: absolute;
+      top: 12.9rem;
+      left: 25.51rem;
+
+      &__text-socials {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &__text {
+        @include share-text-styles(2.1rem);
+      }
+
+      &__socials {
+        @include socials-styles();
+      }
+
+      &__hide-btn {
+        display: inline-block;
+        @include btn-styles($color-hide-btn-bg);
+        position: absolute;
+        top: 21.2rem;
+        left: 37.3rem;
+
+        &-img path {
+          fill: $color-hide-btn;
+        }
+      }
+    }
+  }
+
+  // CLASS USED WITH JAVASCRIPT
+  .reveal {
+    display: flex !important;
+  }
+}

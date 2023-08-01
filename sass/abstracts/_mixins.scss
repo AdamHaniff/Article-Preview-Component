@@ -1,0 +1,25 @@
+// ************* MIXINS ************
+@mixin btn-styles($background-color) {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: none;
+  background: $background-color;
+}
+
+@mixin share-text-styles($margin-right) {
+  color: $color-share-text;
+  font-size: 1.3rem;
+  font-weight: $font-weight-medium;
+  line-height: 2rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  margin-right: $margin-right;
+}
+
+@mixin socials-styles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 9.2rem;
+}
